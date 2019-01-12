@@ -139,7 +139,7 @@ $ vi /usr/setup/latestTomcat/webapps/manager/META-INF/context.xml
 
 ### 调优前
 调优之前可以通过tomcat自带的管理界面查看服务器、jvm等信息。
-![调优前](leanote://file/getImage?fileId=5c2c7a3bab64415356001992)
+![调优前](https://github.com/zeanzai/Java-Linux/blob/master/image/install-tomcat/01.png)
 
 
 
@@ -272,7 +272,7 @@ CATALINA_OPTS="-Dfile.encoding=UTF-8 -server -Xms32g -Xmx32g"
 ```
 
 ### 调优后
-![调优后](leanote://file/getImage?fileId=5c2c7a3bab64415356001993)
+![调优后](https://github.com/zeanzai/Java-Linux/blob/master/image/install-tomcat/02.png)
 
 # 参考
 1. https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Tomcat-Install-And-Settings.md

@@ -12,7 +12,7 @@
 创建ssl的证书，创建完成之后付款、补全认证资料，在域名验证类型处选择“文件验证”；
 
 ### 验证主机
-![验证主机](leanote://file/getImage?fileId=5c355acfeba98a7b59000001)
+![验证主机](https://github.com/zeanzai/Java-Linux/blob/master/image/https-config/01.png)
 
 #### 配置nginx的配置文件
 ```
@@ -56,7 +56,7 @@ $ systemctl reload nginx
 
 #### 访问测试
 访问：`http://sysxcx.beidiancloud.com/.well-known/pki-validation/fileauth.txt`
-![解析成功](leanote://file/getImage?fileId=5c355f24eba98a7b59000002)
+![解析成功](https://github.com/zeanzai/Java-Linux/blob/master/image/https-config/02.png)
 
 ### 配置https
 #### 创建证书文件夹

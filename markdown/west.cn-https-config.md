@@ -16,12 +16,12 @@
 
 #### 配置nginx的配置文件
 ```
-$ vi /usr/setup/nginx-1.14.1/conf/vhost/sysxcx.beidiancloud.com.conf
+$ vi /usr/setup/nginx-1.14.1/conf/vhost/test.domainname.com.conf
 server {
     listen       80;
-    server_name  sysxcx.beidiancloud.com;
+    server_name  test.domainname.com;
     location / {
-            root   html/sysxcx;
+            root   html/test;
             index  index.html index.htm;
     }
     error_page   500 502 503 504  /50x.html;
@@ -33,12 +33,12 @@ server {
 
 #### 创建文件夹
 ```
-$ mkdir -p /usr/setup/nginx-1.14.1/html/sysxcx/.well-known/pki-validation
+$ mkdir -p /usr/setup/nginx-1.14.1/html/test/.well-known/pki-validation
 ```
 
 #### 创建校验文件
 ```
-$ vi /usr/setup/nginx-1.14.1/html/sysxcx/.well-known/pki-validation/fileauth.txt
+$ vi /usr/setup/nginx-1.14.1/html/test/.well-known/pki-validation/fileauth.txt
 ```
 
 #### 重启nginx
@@ -55,13 +55,13 @@ $ systemctl reload nginx
 
 
 #### 访问测试
-访问：`http://sysxcx.beidiancloud.com/.well-known/pki-validation/fileauth.txt`
-![解析成功](https://github.com/zeanzai/Java-Linux/blob/master/image/https-config/02.png)
+访问：`http://test.domainname.com/.well-known/pki-validation/fileauth.txt`
+在浏览器中输入 `test.domainname.com` 测试是否解析成功。
 
 ### 配置https
 #### 创建证书文件夹
 ```
-$ mkdir /usr/setup/nginx-1.14.1/conf/cert/sysxcx
+$ mkdir /usr/setup/nginx-1.14.1/conf/cert/test
 ```
 
 #### 下载并合并证书
@@ -75,25 +75,25 @@ $ mkdir /usr/setup/nginx-1.14.1/conf/cert/sysxcx
 将 .key 、 .cer 、 .crt 三个文件复制到上一步骤创建的目录中。
 
 #### 修改配置文件
-将上面创建的 sysxcx.beidiancloud.conf 的文件修改为下面的内容，修改完成后重启 nginx 。
+将上面创建的 test.domainname.conf 的文件修改为下面的内容，修改完成后重启 nginx 。
 
 ```
-$ vi /usr/setup/nginx-1.14.1/conf/vhost/sysxcx.beidiancloud.com.conf
+$ vi /usr/setup/nginx-1.14.1/conf/vhost/test.domainname.com.conf
 
 server {
     listen       80;
-    server_name  sysxcx.beidiancloud.com;
+    server_name  test.domainname.com;
 
     location / {
-        rewrite ^(.*) https://sysxcx.beidiancloud.com/$1 permanent;
+        rewrite ^(.*) https://test.domainname.com/$1 permanent;
     }
 }
 server {
     listen       443 ssl;
-    server_name  sysxcx.beidiancloud.com;
+    server_name  test.domainname.com;
 
-    ssl_certificate      /usr/setup/nginx-1.14.1/conf/cert/sysxcx/sysxcx.beidiancloud.com_ca.crt;
-    ssl_certificate_key  /usr/setup/nginx-1.14.1/conf/cert/sysxcx/sysxcx.beidiancloud.com.key;
+    ssl_certificate      /usr/setup/nginx-1.14.1/conf/cert/test/test.domainname.com_ca.crt;
+    ssl_certificate_key  /usr/setup/nginx-1.14.1/conf/cert/test/test.domainname.com.key;
 
     ssl_session_cache    shared:SSL:1m;
     ssl_session_timeout  5m;
@@ -115,8 +115,8 @@ $ systemctl reload nginx
 
 #### 删除验证文件
 ```
-$ rm -rf sysxcx/
+$ rm -rf test/
 ```
 
 #### 测试
-![测试结果](leanote://file/getImage?fileId=5c356cdaeba98a7b59000005)
+浏览器中输入 `test.domainname.com` 查看是否自动跳转到https。成功。

@@ -12,7 +12,7 @@
 创建ssl的证书，创建完成之后付款、补全认证资料，在域名验证类型处选择“文件验证”；
 
 ### 验证主机
-![验证主机](https://github.com/zeanzai/Java-Linux/blob/master/image/https-config/01.png)
+根据 西部数码 证书列表界面上要求的方式进行配置，验证主机属于域名所有者。
 
 #### 配置nginx的配置文件
 ```

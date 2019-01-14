@@ -152,7 +152,7 @@ server {
 - [ ] [golang的安装]()
 - [ ] [YApi的安装]()
 - [ ] [使用GitHub和Atom打造自己的云笔记本]()
-- [x] [window项目部署]()
+- [x] [window项目部署](https://github.com/zeanzai/Java-Linux/blob/master/markdown/window-develop.md)
 
 ## 4. 欢迎
 欢迎吐槽，也欢迎各种形式的pull request。

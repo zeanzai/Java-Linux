@@ -29,9 +29,16 @@ nginx作为前端的web容器必不可少，也可以作为图片服务器，还
 将上传的nginx压缩包解压到setup文件夹内。
 
 - 配置服务
-将 nginx-service.exe、nginx-service.exe.config、nginx-service.xml 目录下
+将 nginx-service.exe、nginx-service.exe.config、nginx-service.xml 放置到 nginx.exe 同级目录下。注意，三个文件的名称要一样。
 
+- 服务自启
+找到服务窗口中的nginx服务，属性中设置自动重启，并启动起来。
 
+- 注意：
+如果启动出现问题，查看是否是因为端口冲突。
+
+### 部署前端
+运维人员将打包好的前端文件放置到nginx安装路径下面的html文件夹路径下面即可。
 
 ## 安装后端运行软件
 
@@ -86,3 +93,7 @@ nginx作为前端的web容器必不可少，也可以作为图片服务器，还
 在浏览器中输入： http://localhost:8080
 
 ### 安装mysql
+略。
+
+### 部署后端项目
+后端配置好数据库连接及数据库用户名和密码等重要信息后进行打包。运维人员将打包好的war放置到tomcat的webaap文件夹下面，tomcat会自动解压运行。然后浏览器访问：http://localhost:8080

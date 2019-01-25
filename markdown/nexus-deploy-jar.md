@@ -176,4 +176,4 @@ public class ProjectATest {
 每次更新project-b的时候，都需要更新每一个模块的版本，同样，project-b的版本也需要更新，不然，会出现发布的错误。
 
 # 项目源码
-[test-nexus.rar](https://github.com/zeanzai/Java-Linux/blob/master/test-nexus.rar)
+[test-nexus.rar](https://github.com/zeanzai/Java-Linux/blob/master/source/test-nexus.rar)

@@ -140,6 +140,7 @@ server {
 - [x] [gitlab的安装](https://github.com/zeanzai/Java-Linux/blob/master/markdown/install-gitlab.md)
 - [ ] [nexus的安装]()
     - [ ] [nexus的使用]()
+    - [x] [将jar部署到nexus](https://github.com/zeanzai/Java-Linux/blob/master/markdown/nexus-deploy-jar.md)
 - [ ] [zookeeper的安装]()
 - [ ] [solr的安装]()
 - [ ] [k8s的安装]()

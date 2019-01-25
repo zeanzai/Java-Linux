@@ -109,8 +109,6 @@ firewall-cmd --zone=public --permanent --add-port=8009/tcp（未执行）
 firewall-cmd --reload
 ```
 
-- 修改配置文件
-
 
 # 使用
 ## 配置
@@ -133,6 +131,19 @@ $ vi /usr/setup/latestTomcat/webapps/manager/META-INF/context.xml
 		<!--  <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
 		<Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
 	</Context>
+```
+
+## tomcat启动慢
+```
+Tomcat启动慢的解决办法
+第一种 :
+通过修改Tomcat启动文件 -Djava.security.egd=file:/dev/urandom 通过修改JRE中的java.security文件 securerandom.source=file:/dev/urandom
+
+第二种(推荐):
+yum -y install rng-tools
+##启动熵服务
+systemctl start rngd
+systemctl restart rngd
 ```
 
 ## 调优

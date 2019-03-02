@@ -141,7 +141,7 @@ server {
     - [x] [showdoc的备份与还原](https://github.com/zeanzai/Java-Linux/blob/master/markdown/move-showdoc.md)
 - [x] [gitlab的安装](https://github.com/zeanzai/Java-Linux/blob/master/markdown/install-gitlab.md)
 - [ ] [nexus的安装]()
-    - [ ] [nexus的使用]()
+    - [x] [nexus的使用](https://github.com/zeanzai/Java-Linux/blob/master/markdown/use-nexus.md)
     - [x] [将jar部署到nexus](https://github.com/zeanzai/Java-Linux/blob/master/markdown/nexus-deploy-jar.md)
 - [ ] [zookeeper的安装]()
 - [ ] [solr的安装]()
@@ -157,7 +157,8 @@ server {
 - [ ] [golang的安装]()
 - [ ] [YApi的安装]()
 - [ ] [使用GitHub和Atom打造自己的云笔记本]()
-- [x] [window项目部署](https://github.com/zeanzai/Java-Linux/blob/master/markdown/window-develop.md)
+- [x] [windows平台下面的项目部署](https://github.com/zeanzai/Java-Linux/blob/master/markdown/window-develop.md)
+- [x] [windows平台下面的nginx自启动配置](https://github.com/zeanzai/Java-Linux/blob/master/markdown/window-nginx-install-auto-start.md)
 
 ## 4. 欢迎
 欢迎吐槽，也欢迎各种形式的pull request。

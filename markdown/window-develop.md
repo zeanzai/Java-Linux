@@ -46,7 +46,7 @@ nginx作为前端的web容器必不可少，也可以作为图片服务器，还
 
 - 查看是否已经安装
 打开cmd命令行，依次输入`java`、`javac`、`java -version`命令，查看是否能够有正确的输出；如下图，即没有jdk运行环境：
-![没有java环境](https://github.com/zeanzai/Java-Linux/blob/master/image/window-develop/01.png)
+![没有java环境](../image/window-develop/01.png)
 
 - 解压jdk压缩包
 将上传好的jdk压缩包解压到setup文件夹内。
@@ -62,11 +62,11 @@ nginx作为前端的web容器必不可少，也可以作为图片服务器，还
 
 注意：上面的两个变量值不要忘记“.”和“;”。
 ````
-![设置环境变量](https://github.com/zeanzai/Java-Linux/blob/master/image/window-develop/02.png)
+![设置环境变量](../image/window-develop/02.png)
 
 - 测试
 再次打开cmd命令行，依次输入`java`、`javac`、`java -version`命令，查看是否正确输出，如下图，即表示jdk安装成功：
-![测试](https://github.com/zeanzai/Java-Linux/blob/master/image/window-develop/03.png)
+![测试](../image/window-develop/03.png)
 
 ### 安装tomcat
 - 解压tomcat压缩包
@@ -84,7 +84,7 @@ nginx作为前端的web容器必不可少，也可以作为图片服务器，还
 - 安装服务
 使用管理员身份运行cmd，进入到bin目录下，输入service.bat install
 如下图所示：
-![安装service](https://github.com/zeanzai/Java-Linux/blob/master/image/window-develop/04.png)
+![安装service](../image/window-develop/04.png)
 
 - 服务自启动
 任务栏的中找到tomcat服务，设置为开机自启；

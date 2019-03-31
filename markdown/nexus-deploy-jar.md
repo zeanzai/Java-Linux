@@ -5,14 +5,14 @@
 # 实现步骤
 - 搭建nexus私服
 - 创建项目b
-![创建项目](https://github.com/zeanzai/Java-Linux/blob/master/image/nexus-deploy-jar/01.png)
-![设置坐标](https://github.com/zeanzai/Java-Linux/blob/master/image/nexus-deploy-jar/02.png)
-![设置项目名](https://github.com/zeanzai/Java-Linux/blob/master/image/nexus-deploy-jar/03.png)
-![创建模块](https://github.com/zeanzai/Java-Linux/blob/master/image/nexus-deploy-jar/04.png)
+![创建项目](../image/nexus-deploy-jar/01.png)
+![设置坐标](../image/nexus-deploy-jar/02.png)
+![设置项目名](../image/nexus-deploy-jar/03.png)
+![创建模块](../image/nexus-deploy-jar/04.png)
 
 - 效果图
 创建后把多余的文件夹删除后的效果图：
-![效果图](https://github.com/zeanzai/Java-Linux/blob/master/image/nexus-deploy-jar/05.png)
+![效果图](../image/nexus-deploy-jar/05.png)
 
 - project-b
 project-b是一个聚合工程，所以它没有源代码，只有一个pom文件。文件内容如下
@@ -176,4 +176,4 @@ public class ProjectATest {
 每次更新project-b的时候，都需要更新每一个模块的版本，同样，project-b的版本也需要更新，不然，会出现发布的错误。
 
 # 项目源码
-[test-nexus.rar](https://github.com/zeanzai/Java-Linux/blob/master/source/test-nexus.rar)
+[test-nexus.rar](../source/test-nexus.rar)

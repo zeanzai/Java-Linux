@@ -166,6 +166,7 @@ server {
 - [x] [windows平台下面的项目部署](https://github.com/zeanzai/Java-Linux/blob/master/markdown/window-develop.md)
 - [x] [windows平台下面的nginx自启动配置](https://github.com/zeanzai/Java-Linux/blob/master/markdown/window-nginx-install-auto-start.md)
 - [x] [遇到的问题及解决方案](https://github.com/zeanzai/Java-Linux/blob/master/markdown/problems.md)
+- [x] [使用visualVM远程访问Tomcat](https://github.com/zeanzai/Java-Linux/blob/master/markdown/use-visualVM-connect-tomcat.md)
 
 ## 4. 欢迎
 欢迎吐槽，也欢迎各种形式的pull request。

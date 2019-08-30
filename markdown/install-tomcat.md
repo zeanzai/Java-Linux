@@ -10,99 +10,92 @@ tomcat作为javaweb应用服务器，应用广泛，在此不再介绍。
 
 # 安装
 - 解压文件
-```shell
+```
 $ tar zxf apache-tomcat-8.5.32.tar.gz -C /usr/setup/
 ```
 
 - 创建用户，并将home目录放置到安装目录下面
-```shell
-$ useradd -m -U -d /usr/setup/apache-tomcat-8.5.32 -s /bin/false tomcat
-
-附：
-$ useradd --help
-···
--b, --base-dir BASE_DIR       新账户的主目录的基目录
--c, --comment COMMENT         新账户的 GECOS 字段
--d, --home-dir HOME_DIR       新账户的主目录
--D, --defaults                显示或更改默认的 useradd 配置
--e, --expiredate EXPIRE_DATE  新账户的过期日期
--f, --inactive INACTIVE       新账户的密码不活动期
--g, --gid GROUP               新账户主组的名称或 ID
--G, --groups GROUPS   新账户的附加组列表
--h, --help                    显示此帮助信息并推出
--k, --skel SKEL_DIR   使用此目录作为骨架目录
--K, --key KEY=VALUE           不使用 /etc/login.defs 中的默认值
--l, --no-log-init     不要将此用户添加到最近登录和登录失败数据库
--m, --create-home     创建用户的主目录
--M, --no-create-home          不创建用户的主目录
--N, --no-user-group   不创建同名的组
--o, --non-unique              允许使用重复的 UID 创建用户
--p, --password PASSWORD               加密后的新账户密码
--r, --system                  创建一个系统账户
--R, --root CHROOT_DIR         chroot 到的目录
--s, --shell SHELL             新账户的登录 shell
--u, --uid UID                 新账户的用户 ID
--U, --user-group              创建与用户同名的组
--Z, --selinux-user SEUSER             为 SELinux 用户映射使用指定 SEUSER
 ```
+$ useradd -m -U -d /usr/setup/apache-tomcat-8.5.32 -s /bin/false tomcat
+```
+> 附： <br />
+> $ useradd --help <br />
+> -b, --base-dir BASE_DIR       新账户的主目录的基目录 <br />
+> -c, --comment COMMENT         新账户的 GECOS 字段 <br />
+> -d, --home-dir HOME_DIR       新账户的主目录 <br />
+> -D, --defaults                显示或更改默认的 useradd 配置 <br />
+> -e, --expiredate EXPIRE_DATE  新账户的过期日期 <br />
+> -f, --inactive INACTIVE       新账户的密码不活动期 <br />
+> -g, --gid GROUP               新账户主组的名称或 ID <br />
+> -G, --groups GROUPS   新账户的附加组列表 <br />
+> -h, --help                    显示此帮助信息并推出 <br />
+> -k, --skel SKEL_DIR   使用此目录作为骨架目录 <br />
+> -K, --key KEY=VALUE           不使用 /etc/login.defs 中的默认值 <br />
+> -l, --no-log-init     不要将此用户添加到最近登录和登录失败数据库 <br />
+> -m, --create-home     创建用户的主目录 <br />
+> -M, --no-create-home          不创建用户的主目录 <br />
+> -N, --no-user-group   不创建同名的组 <br />
+> -o, --non-unique              允许使用重复的 UID 创建用户 <br />
+> -p, --password PASSWORD               加密后的新账户密码 <br />
+> -r, --system                  创建一个系统账户 <br />
+> -R, --root CHROOT_DIR         chroot 到的目录 <br />
+> -s, --shell SHELL             新账户的登录 shell <br />
+> -u, --uid UID                 新账户的用户 ID <br />
+> -U, --user-group              创建与用户同名的组 <br />
+> -Z, --selinux-user SEUSER             为 SELinux 用户映射使用指定 SEUSER <br />
+
 
 - 创建快捷方式
-```shell
+```
 $ ln -s /usr/setup/apache-tomcat-* /usr/setup/latestTomcat
 ```
 
 - 改变文件所属组和用户为Tomcat
-```shell
+```
 $ chown -R tomcat: /usr/setup/apache-tomcat-*
 $ chown -R tomcat: /usr/setup/latestTomcat
 ```
 
 - 可执行状态
-```shell
+```
 $ chmod +x /usr/setup/latestTomcat/bin/*.sh
 ```
 
 - 创建/etc/systemd/system/tomcat.service文件
-```shell
+```
 $ vi /etc/systemd/system/tomcat.service
 // 添加以下内容
 [Unit]
 Description=Tomcat 8.5.32 servlet container
 After=network.target
-
 [Service]
 Type=forking
-
 User=tomcat
 Group=tomcat
-
 Environment="JAVA_HOME=/usr/setup/jdk1.8.0_144"
-
 Environment="CATALINA_BASE=/usr/setup/latestTomcat"
 Environment="CATALINA_HOME=/usr/setup/latestTomcat"
 Environment="CATALINA_PID=/usr/setup/latestTomcat/temp/tomcat.pid"
-
 ExecStart=/usr/setup/latestTomcat/bin/startup.sh
 ExecStop=/usr/setup/latestTomcat/bin/shutdown.sh
-
 [Install]
 WantedBy=multi-user.target
 ```
 
 - 让创建的服务生效，然后启动Tomcat
-```shell
+```
 systemctl daemon-reload
 systemctl start tomcat
 systemctl status tomcat
 ```
 
 - 加入 automatically started at boot time
-```shell
+```
 systemctl enable tomcat
 ```
 
 - 开放端口
-```shell
+```
 firewall-cmd --zone=public --permanent --add-port=8080/tcp
 firewall-cmd --zone=public --permanent --add-port=8005/tcp（未执行）
 firewall-cmd --zone=public --permanent --add-port=8009/tcp（未执行）
@@ -185,7 +178,6 @@ maxIdleTime，如果当前线程大于初始化线程，那空闲线程存活的
 ```
 
 ##### 修改默认的连接器参数配置
-
 ```
 $ vi /usr/setup/latestTomcat/conf/server.xml
 默认值：
@@ -248,7 +240,6 @@ $ vi /usr/setup/latestTomcat/conf/server.xml
 第二种(推荐):
 1. 安装rng工具包，执行“yum -y install rng-tools”
 2. 启动熵服务，执行：“systemctl start rngd”和“systemctl restart rngd”
-
 ```
 
 ##### 日志分割

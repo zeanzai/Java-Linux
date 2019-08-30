@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Java-Linux</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
+  <meta name="keywords" content="java,linux,centos,mysql,gitlab,tomcat,showdoc,nexus,maven,nginx,rabbitmq">
+  <meta name="description" content="Java程序员的必备Linux运维技能">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
 </head>
 <body>
   <div id="app"></div>
@@ -18,7 +18,7 @@
       coverpage: true,
       coverpage: 'extra/cover.md',
       loadSidebar: true,
-      subMaxLevel: 3,
+      subMaxLevel: 2,
       ga: 'UA-126754348-1',
       disqus: 'zeanzai',
       search: {
@@ -30,7 +30,20 @@
           '/': 'Search'
         }
       },
+      plugins: [
+        function (hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span>Copyright © 2018-2019 <a href="https://zeanzai.me" target="_blank">zeanzai.me</a>. All rights reserved.</span>',
+            '</footer>'
+          ].join('')
 
+          hook.afterEach(function (html) {
+            return html + footer
+          })
+        }
+      ]
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>

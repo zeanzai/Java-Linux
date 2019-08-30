@@ -4,5 +4,7 @@
 3. 测试地址
 
 4. 开放端口
+```
 firewall-cmd --zone=public --permanent --add-port=8103/tcp
 firewall-cmd --reload
+```

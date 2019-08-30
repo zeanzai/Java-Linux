@@ -2,13 +2,17 @@
 - 上传到指定目录
 - 解压到安装目录
 - 配置环境变量
+
 ```
 export NODE_HOME=/usr/setup/node-v10.14.2-linux-x64
 export PATH=$PATH:$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin
 
 ```
+
 - 使配置文件生效
+```
 source /etc/profile
+```
 
 # 构建前端项目
 - 安装node.js pluins插件

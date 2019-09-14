@@ -1,28 +1,42 @@
 # 前言
+
 （主要介绍：应用场景，大概发展历史等。）
+
 （读者在写自己的安装文档时，此部分可以不用记录。）
+
 # 信息统计
+
 （主要介绍：下载地址、软件版本、安装地址、配置文档地址、日志文档地址、占用端口、使用地址、用户信息、测试安装结果、其他有用信息等）
+
 # 安装并使用nexus2.x
 
 ## 安装
+
 - 安装依赖
+
 ```
 $ java -version
 java version "1.8.0_144"
 Java(TM) SE Runtime Environment (build 1.8.0_144-b01)
 Java HotSpot(TM) 64-Bit Server VM (build 25.144-b01, mixed mode)
 ```
+
 - 上传到`/opt/package`目录
+
 - 解压到解压目录
+
 ```
 $ tar zxf /opt/package/nexus-2.14.5-02-bundle.tar.gz -C /usr/setup/
 ```
+
 - 移动
+
 ```
 $ mv -f /usr/setup/sonatype-work/ /opt/
 ```
+
 - 配置nexus
+
 ```
 $ vi /usr/setup/nexus-2.14.5-02/conf/nexus.properties
 // 修改后：
@@ -38,12 +52,16 @@ $ vi /usr/setup/nexus-2.14.5-02/bin/jsw/conf/wrapper.conf
 // 修改后：
 wrapper.java.command=/usr/setup/jdk1.8.0_144/bin/java
 ```
+
 - 开放端口
+
 ```
 $ firewall-cmd --zone=public --permanent --add-port=8081/tcp
 $ firewall-cmd --reload
 ```
+
 - 设置服务
+
 ```
 $ vi /etc/systemd/system/nexus.service
 [Unit]
@@ -61,28 +79,37 @@ WantedBy=multi-user.target
 $ systemctl enable nexus
 $ systemctl start nexus
 ```
+
 - 测试
+
 ```
 浏览器输入：http://10.168.0.120:8081/nexus
 ```
 
 ## 使用nexus2.x
+
 ### 权限管理
+
 1. 用户
 2. 角色
 
 ### 仓库类型
+
 几种仓库类型的简单介绍
 
 ### 查看日志
+
 如何查看nexus的执行日志
 
 ### 下载中央仓库索引
+
 1. 设置仓库开关
 2. 创建任务
 
 ### 设置项目连接私服
+
 - 单个项目连接私服
+
 ```
 // 只需要在项目的pom文件中添加下面内容即可
 
@@ -95,7 +122,9 @@ $ systemctl start nexus
 </repositories>
 
 ```
+
 - 全局连接私服
+
 ```
 // 在maven的setting.xml文件中配置下面内容即可
 
@@ -110,7 +139,9 @@ $ systemctl start nexus
 ```
 
 ### 本地开发的jar发布到nexus上面
+
 - 第一步：配置setting.xml文件
+
 ```
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -217,7 +248,9 @@ $ systemctl start nexus
 
 </settings>
 ```
+
 - 第二步：在pom文件中添加：
+
 ```
 <distributionManagement>
     <repository>
@@ -232,11 +265,13 @@ $ systemctl start nexus
 ```
 
 ### 附：java项目不同模块的划分
+
 划分的背景
 划分方法
 参考地址
 
 # 安装并使用nexus3.x
+
 ## 安装
 
 ## 使用

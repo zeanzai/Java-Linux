@@ -1,15 +1,20 @@
 # 前言
+
 略
+
 # 信息统计
-下载地址：https://dev.mysql.com/downloads/mysql/5.7.html#downloads
-软件版本：mysql-5.7.24
-安装地址：默认地址，即分散安装到很多目录
-配置文件地址：/etc/my.cnf
-日志文档地址：见配置文件
-占用端口：3306
+
+- 下载地址：https://dev.mysql.com/downloads/mysql/5.7.html#downloads
+- 软件版本：mysql-5.7.24
+- 安装地址：默认地址，即分散安装到很多目录
+- 配置文件地址：/etc/my.cnf
+- 日志文档地址：见配置文件
+- 占用端口：3306
 
 # 安装
+
 - 检查安装环境
+
 ```shell
 rpm -qa|grep mariadb
 rpm -e mariadb-libs-* --nodeps
@@ -17,6 +22,7 @@ rpm -qa|grep mariadb
 ```
 
 - 解压
+
 ```shell
 tar xvf mysql-5.7.24-1.el7.x86_64.rpm-bundle.tar
 mkdir mysql5.7.24
@@ -24,6 +30,7 @@ mv mysql-community-* ./mysql5.7.24/
 ```
 
 - 安装
+
 ```shell
 cd mysql5.7.16/
 rpm -ivh mysql-community-common-5.7.24-1.el7.x86_64.rpm
@@ -34,6 +41,7 @@ rpm -ivh mysql-community-server-5.7.24-1.el7.x86_64.rpm
 ```
 
 - 初始化
+
 ```shell
 mysqld --initialize --user=mysql
 cat /var/log/mysqld.log
@@ -43,6 +51,7 @@ systemctl status mysqld
 ```
 
 - 分配权限
+
 ```shell
 // 使用root登录
 mysql -uroot -p
@@ -72,11 +81,11 @@ flush privileges;
 ```
 
 - 修改配置文件
+
 ```shell
 [root@dev ~]# cat /etc/my.cnf
 # For advice on how to change settings please see
 # http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
-
 [mysqld]
 #
 # Remove leading # and set to the amount of RAM for the most important data
@@ -95,10 +104,8 @@ flush privileges;
 # read_rnd_buffer_size = 2M
 datadir=/var/lib/mysql
 socket=/var/lib/mysql/mysql.sock
-
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
-
 log-error=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 
@@ -107,6 +114,7 @@ lower_case_table_names=1
 ```
 
 - 开放端口
+
 ```shell
 firewall-cmd --zone=public --add-port=3306/tcp --permanent
 firewall-cmd --reload

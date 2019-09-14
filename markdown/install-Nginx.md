@@ -1,31 +1,38 @@
 # 前言
+
 nginx主要用于web服务容器、负载均衡器、反向代理器。
 
 # 信息统计
-下载地址：http://nginx.org/en/download.html
-软件版本：nginx-1.14.1
-安装地址：/usr/setup/nginx-1.14.1
-配置文件地址：/usr/setup/nginx-1.14.1/conf/nginx.conf
-占用端口：详见配置文件
+
+- 下载地址：http://nginx.org/en/download.html
+- 软件版本：nginx-1.14.1
+- 安装地址：/usr/setup/nginx-1.14.1
+- 配置文件地址：/usr/setup/nginx-1.14.1/conf/nginx.conf
+- 占用端口：详见配置文件
 
 # 安装
+
 - 安装依赖及工具
+
 ```shell
 yum install -y gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel
 ```
 
 - 创建安装目录
+
 ```shell
 mkdir /usr/setup/nginx-1.14.1
 mkdir /usr/setup/nginx-1.14.1/temp
 ```
 
 - 解压
+
 ```shell
 tar zxf nginx-1.14.1.tar.gz
 ```
 
 - 配置
+
 ```shell
 cd nginx-1.14.1
 ./configure --prefix=/usr/setup/nginx-1.14.1 \
@@ -41,9 +48,8 @@ cd nginx-1.14.1
 --http-fastcgi-temp-path=/usr/setup/nginx-1.14.1/temp/fastcgi \
 --http-uwsgi-temp-path=/usr/setup/nginx-1.14.1/temp/uwsgi \
 --http-scgi-temp-path=/usr/setup/nginx-1.14.1/temp/scgi
-```
-输出：
-```
+
+// 输出
 Configuration summary
 + using system PCRE library
 + using system OpenSSL library
@@ -65,12 +71,14 @@ nginx http scgi temporary files: "/usr/setup/nginx-1.14.1/temp/scgi"
 ```
 
 - 安装
+
 ```shell
 make
 make install
 ```
 
 - 启动并测试
+
 ```shell
 cd /usr/setup/nginx-1.14.1/sbin
 ./nginx
@@ -80,6 +88,7 @@ firewall-cmd --reload
 ```
 
 - 配置自启动
+
 ```shell
 vi /etc/systemd/system/nginx.service
 

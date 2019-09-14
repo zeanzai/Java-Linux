@@ -9,12 +9,15 @@ tomcat作为javaweb应用服务器，应用广泛，在此不再介绍。
 - 依赖：jdk
 
 # 安装
+
 - 解压文件
+
 ```
 $ tar zxf apache-tomcat-8.5.32.tar.gz -C /usr/setup/
 ```
 
 - 创建用户，并将home目录放置到安装目录下面
+
 ```
 $ useradd -m -U -d /usr/setup/apache-tomcat-8.5.32 -s /bin/false tomcat
 ```
@@ -44,24 +47,27 @@ $ useradd -m -U -d /usr/setup/apache-tomcat-8.5.32 -s /bin/false tomcat
 > -U, --user-group              创建与用户同名的组 <br />
 > -Z, --selinux-user SEUSER             为 SELinux 用户映射使用指定 SEUSER <br />
 
-
 - 创建快捷方式
+
 ```
 $ ln -s /usr/setup/apache-tomcat-* /usr/setup/latestTomcat
 ```
 
 - 改变文件所属组和用户为Tomcat
+
 ```
 $ chown -R tomcat: /usr/setup/apache-tomcat-*
 $ chown -R tomcat: /usr/setup/latestTomcat
 ```
 
 - 可执行状态
+
 ```
 $ chmod +x /usr/setup/latestTomcat/bin/*.sh
 ```
 
 - 创建/etc/systemd/system/tomcat.service文件
+
 ```
 $ vi /etc/systemd/system/tomcat.service
 // 添加以下内容
@@ -83,6 +89,7 @@ WantedBy=multi-user.target
 ```
 
 - 让创建的服务生效，然后启动Tomcat
+
 ```
 systemctl daemon-reload
 systemctl start tomcat
@@ -90,11 +97,13 @@ systemctl status tomcat
 ```
 
 - 加入 automatically started at boot time
+
 ```
 systemctl enable tomcat
 ```
 
 - 开放端口
+
 ```
 firewall-cmd --zone=public --permanent --add-port=8080/tcp
 firewall-cmd --zone=public --permanent --add-port=8005/tcp（未执行）
@@ -104,8 +113,11 @@ firewall-cmd --reload
 
 
 # 使用
+
 ## 配置
+
 ### 配置manager的用户
+
 ```
 $ vi /usr/setup/latestTomcat/conf/tomcat-users.xml
   // 添加以下内容
@@ -117,6 +129,7 @@ $ vi /usr/setup/latestTomcat/conf/tomcat-users.xml
 ```
 
 ### 允许远程登录
+
 ```
 $ vi /usr/setup/latestTomcat/webapps/manager/META-INF/context.xml
 	<Context antiResourceLocking="false" privileged="true" >
@@ -127,6 +140,7 @@ $ vi /usr/setup/latestTomcat/webapps/manager/META-INF/context.xml
 ```
 
 ## tomcat启动慢
+
 ```
 Tomcat启动慢的解决办法
 第一种 :
@@ -142,14 +156,18 @@ systemctl restart rngd
 ## 调优
 
 ### 调优前
+
 调优之前可以通过tomcat自带的管理界面查看服务器、jvm等信息。
 ![调优前](../image/install-tomcat/01.png)
 
 
 
 ### 调优
+
 #### 修改tomcat配置
+
 ##### 打开默认被注释的连接池配置
+
 ```
 $ vi /usr/setup/latestTomcat/conf/server.xml
 默认：【默认是注释的】
@@ -178,6 +196,7 @@ maxIdleTime，如果当前线程大于初始化线程，那空闲线程存活的
 ```
 
 ##### 修改默认的连接器参数配置
+
 ```
 $ vi /usr/setup/latestTomcat/conf/server.xml
 默认值：
@@ -212,6 +231,7 @@ maxHttpHeaderSize，http请求头信息的最大程度，超过此长度的部�
 ```
 
 ##### 禁用 AJP（如果你服务器没有使用 Apache）
+
 ```
 $ vi /usr/setup/latestTomcat/conf/server.xml
 默认：
@@ -222,6 +242,7 @@ $ vi /usr/setup/latestTomcat/conf/server.xml
 ```
 
 ##### 关闭自动部署功能
+
 ```
 $ vi /usr/setup/latestTomcat/conf/server.xml
 默认值：
@@ -232,6 +253,7 @@ $ vi /usr/setup/latestTomcat/conf/server.xml
 ```
 
 ##### 启动慢的解决问题
+
 ```
 第一种 :
 1. 修改Tomcat启动文件 -Djava.security.egd=file:/dev/urandom
@@ -243,6 +265,7 @@ $ vi /usr/setup/latestTomcat/conf/server.xml
 ```
 
 ##### 日志分割
+
 ```
 out日志过大
 https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Tomcat-Install-And-Settings.md
@@ -257,7 +280,9 @@ https://my.oschina.net/u/3715199/blog/1574974  第二种方法
 #### 修改jvm配置
 
 - 配置内存
+
 修改$CATALINA_HOME/bin/catalina.sh
+
 ```
 CATALINA_OPTS="-Dfile.encoding=UTF-8 -server -Xms32g -Xmx32g"
 
@@ -274,7 +299,9 @@ CATALINA_OPTS="-Dfile.encoding=UTF-8 -server -Xms32g -Xmx32g"
 ```
 
 ### 调优后
+
 ![调优后](../image/install-tomcat/02.png)
 
 # 参考
+
 1. https://github.com/judasn/Linux-Tutorial/blob/master/markdown-file/Tomcat-Install-And-Settings.md

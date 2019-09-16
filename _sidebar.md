@@ -5,6 +5,7 @@
   - [centos7.5磁盘扩展](markdown/centos7.5-disk-extend.md)
   - [服务器基本信息查看](markdown/centos7.5-basic-information.md)
   - [vi与vim工具的使用](markdown/use-vi-vim.md)
+  - [Cron表达式](markdown/cron.md)
 
 - 软件安装
 

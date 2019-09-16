@@ -1,7 +1,22 @@
-# Java程序员的必备Linux运维技能
+
+<center>
+
+![](image/logo.png)
+
+</center>
+
+<center>
+
+![GitHub followers](https://img.shields.io/github/followers/zeanzai?style=plastic) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=plastic)](https://github.com/zeanzai/Java-Linux/pulls) ![GitHub stars](https://img.shields.io/github/stars/zeanzai/Java-Linux?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/Java-Linux?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/Java-Linux?style=plastic)
+
+</center>
+
+## 0. Java程序员的必备Linux运维技能
+
 作为java程序员，Linux运维技能也作为我们的一项必备技能。此仓库可以作为java程序员的学习材料，也可以作为运维人员的参考手册。
 
-## 0. 前言
+## 1. 前言
+
 良好的运维习惯有很多优点：
 
 - 利于自己维护，利于后继者维护
@@ -11,6 +26,7 @@
 **此外，如果你按照本教程来安装和配置，那么此仓库可以作为你的日志系统，这样也易于将来出现问题的排错。**
 
 ## 1. 良好的习惯
+
 笔者工作使用的电脑是window平台，所以使用Windows平台下的软件工具连接到远程服务器上进行相对应的操作。笔者的工作用的操作系统是Windows系统，下面是笔者的一些工作习惯：
 
 - 使用filezilla工具进行上传
@@ -35,9 +51,11 @@
 - 统一使用“解压”，指代：解压到`/opt/unziped`目录
 
 ## 2. 维护日志
+
 维护日志，是对工具软件整个使用过程中的所产生的操作记录，这有利于对工具软件的日常维护、调优、问题修复与追踪等。
 
 ### 2.1 安装类型的维护日志
+
 安装类型的维护日志，是指对一个工具软件的安装、卸载等操作时的记录日志。安装类型的维护日志需要包括以下内容：
 
 - 日志文件名称（file），如：安装Nginx、配置HTTPS、安装jdk、修改Tomcat端口
@@ -46,6 +64,7 @@
 - 维护内容（operation），包括：操作命令记录过程
 
 下面是一个例子【例子是基于Hugo作为静态网页生成技术文档结构】，可供读者参考，但并没有严格意义上要求非要这样做：
+
 ```
 ---
 file:		install-nginx.md
@@ -108,6 +127,7 @@ balabala
 
 
 ### 2.2 配置类型的维护日志
+
 配置文件类型的维护日志，是指对工具软件的日常维护过程的记录日志。应该包括以下内容：
 
 - 修改的 起始位置 ，以 `<-- start`为标志
@@ -120,6 +140,7 @@ balabala
 > 3. 不允许使用中文<br/>
 
 下面是一个例子：
+
 ```shell
 # <-- start
 # www.baidu.com zeanzai 2018-06-22-08:58
@@ -141,6 +162,7 @@ server {
 ```
 
 ## 3. 欢迎
+
 欢迎吐槽，也欢迎各种形式的PR和Issue。
 
 ## 4. 启发
@@ -152,3 +174,19 @@ server {
 ## 5. 其他
 
 - [我的个人博客](https://zeanzai.me)
+
+## 6. 其他项目
+
+<div align="center" style="border: solid red 1px;"><br />
+  <a href="https://github.com/zeanzai/java-interview-questions" target="_blank">java-interview-questions</a><br />
+
+  ![GitHub stars](https://img.shields.io/github/stars/zeanzai/java-interview-questions?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/java-interview-questions?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/java-interview-questions?style=plastic)
+
+  😃 本仓库是笔者在2019年跳槽找工作时收集的面试问题，内容丰富、涉及面广，面向初级、中高级几乎所有阶段的java程序员，希望能帮助大家快速准备java面试。
+
+  <a href="https://zeanzai.me/java-interview-questions/" target="_blank">快捷访问入口</a>
+</div>
+
+## 7. License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>

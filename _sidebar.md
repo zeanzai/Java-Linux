@@ -6,6 +6,7 @@
   - [服务器基本信息查看](markdown/centos7.5-basic-information.md)
   - [vi与vim工具的使用](markdown/use-vi-vim.md)
   - [Cron表达式](markdown/cron.md)
+  - [centos7修改yum源](markdown/update-yum.md)
 
 - 软件安装
 
@@ -24,9 +25,12 @@
   - [image-server](markdown/image-server.md)
   - [jeklly](markdown/install-jekyll.md)
   - [golang](markdown/install-golang.md)
+  - [node](markdown/install-node.md)
+  - [docker](markdown/install-docker.md)
 
 - 软件配置、优化
 
+  - [为centos7分配子用户，并使用ssh安全登录](markdown/centos7-new-users.md)
   - [maven配置全局编译器版本](markdown/maven-config-jdk1.8.md)
   - [mysql修改默认配置](markdown/mysql5.7-configure.md)
   - [mysql的示例配置文件](markdown/mysql-config-file.md)
@@ -45,3 +49,5 @@
   - [jenkins简单实用](markdown/jenkins-use.md)
   - [jenkins持续集成java项目](markdown/jenkins-java-project.md)
   - [jenkins持续集成vue项目](markdown/forend-auto-deploy.md)
+  - [nexus配置阿里云代理](markdown/nexus-config-aliyun-proxy.md)
+  - [docker配置hub仓库代理](markdown/docker-config-hub.md)

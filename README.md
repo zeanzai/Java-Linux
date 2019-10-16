@@ -188,13 +188,13 @@ server {
 </div>
 <br />
 <div align="center" style="border: solid red 1px;"><br />
-  <a href="https://github.com/zeanzai/java-interview-questions" target="_blank">java-interview-questions</a><br />
+  <a href="https://github.com/zeanzai/Java-Interview-Questions" target="_blank">Java-Interview-Questions</a><br />
 
-  ![GitHub stars](https://img.shields.io/github/stars/zeanzai/java-interview-questions?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/java-interview-questions?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/java-interview-questions?style=plastic)
+  ![GitHub stars](https://img.shields.io/github/stars/zeanzai/Java-Interview-Questions?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/Java-Interview-Questions?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/Java-Interview-Questions?style=plastic)
 
   😃 本仓库是笔者在2019年跳槽找工作时收集的面试问题，内容丰富、涉及面广，面向初级、中高级几乎所有阶段的java程序员，希望能帮助大家快速准备java面试。
 
-  <a href="https://zeanzai.me/java-interview-questions/" target="_blank">快捷访问入口</a>
+  <a href="https://zeanzai.me/Java-Interview-Questions/" target="_blank">快捷访问入口</a>
 </div>
 
 ## 7. 说明

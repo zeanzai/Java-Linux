@@ -197,6 +197,10 @@ server {
   <a href="https://zeanzai.me/java-interview-questions/" target="_blank">快捷访问入口</a>
 </div>
 
-## 7. License
+## 7. 说明
+
+本文档基于[docsify](https://docsify.js.org/#/zh-cn/)创建，部署在GitHub Page上面。
+
+## 8. License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>

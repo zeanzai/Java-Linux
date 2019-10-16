@@ -31,6 +31,7 @@
 - 软件配置、优化
 
   - [为centos7分配子用户，并使用ssh安全登录](markdown/centos7-new-users.md)
+  - [centos7服务开机自启](markdown/Centos7-services-autorun.md)
   - [maven配置全局编译器版本](markdown/maven-config-jdk1.8.md)
   - [mysql修改默认配置](markdown/mysql5.7-configure.md)
   - [mysql5.7的主从复制](markdown/mysql5.7-master-and-slave.md)

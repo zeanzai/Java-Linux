@@ -178,7 +178,7 @@ server {
 ## 6. 其他项目
 
 <div align="center" style="border: solid red 1px;"><br />
-  <a href="https://github.com/zeanzai/Computer-Science-Study-Note" target="_blank">java-linux</a><br />
+  <a href="https://github.com/zeanzai/Computer-Science-Study-Note" target="_blank">Computer-Science-Study-Note</a><br />
 
   ![GitHub stars](https://img.shields.io/github/stars/zeanzai/Computer-Science-Study-Note?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/Computer-Science-Study-Note?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/Computer-Science-Study-Note?style=plastic)
 

@@ -178,6 +178,16 @@ server {
 ## 6. 其他项目
 
 <div align="center" style="border: solid red 1px;"><br />
+  <a href="https://github.com/zeanzai/Computer-Science-Study-Note" target="_blank">java-linux</a><br />
+
+  ![GitHub stars](https://img.shields.io/github/stars/zeanzai/Computer-Science-Study-Note?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/Computer-Science-Study-Note?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/Computer-Science-Study-Note?style=plastic)
+
+  ❄️ 计算机科学学习笔记：高级mysql、高级redis、分布式、集群、架构、云……
+
+  <a href="https://zeanzai.me/Computer-Science-Study-Note/" target="_blank">快捷访问入口</a>
+</div>
+<br />
+<div align="center" style="border: solid red 1px;"><br />
   <a href="https://github.com/zeanzai/java-interview-questions" target="_blank">java-interview-questions</a><br />
 
   ![GitHub stars](https://img.shields.io/github/stars/zeanzai/java-interview-questions?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/zeanzai/java-interview-questions?style=plastic) ![GitHub watchers](https://img.shields.io/github/watchers/zeanzai/java-interview-questions?style=plastic)

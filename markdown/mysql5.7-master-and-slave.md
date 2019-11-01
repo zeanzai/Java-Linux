@@ -50,7 +50,7 @@ mysql.slave01:
 ```
 [root@mysql ~]# ll /var/lib/mysql
 
-// 为发现bin文件，表名未开启
+// 未发现bin文件，表明未开启
 ```
 
 2. 修改配置文件
@@ -92,6 +92,7 @@ systemctl restart mysqld
 ```
 vi /etc/my.cnf
 
+#######################主从复制####################
 server-id=2
 relay-log-index=slave-relay-bin.index
 relay-log=slave-relay-bin
@@ -124,7 +125,7 @@ mysql> show master status;
 mysql> show slave status\G
 Empty set (0.00 sec)
 
-mysql> change master to master_host='192.168.100.210';
+mysql> change master to master_host='192.168.100.220';
 Query OK, 0 rows affected (0.01 sec)
 
 
@@ -146,7 +147,7 @@ Query OK, 0 rows affected (0.01 sec)
 mysql> show slave status\G
 *************************** 1. row ***************************
                Slave_IO_State:
-                  Master_Host: 192.168.100.210
+                  Master_Host: 192.168.100.220
                   Master_User: repl
                   Master_Port: 3306
                 Connect_Retry: 60
@@ -210,7 +211,7 @@ Query OK, 0 rows affected (0.01 sec)
 mysql> show slave status\G
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
-                  Master_Host: 192.168.100.210
+                  Master_Host: 192.168.100.220
                   Master_User: repl
                   Master_Port: 3306
                 Connect_Retry: 60

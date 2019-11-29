@@ -7,6 +7,10 @@
   - [vi与vim工具的使用](markdown/use-vi-vim.md)
   - [Cron表达式](markdown/cron.md)
   - [centos7修改yum源](markdown/update-yum.md)
+  - [Centos7修改Dns](markdown/centos7-dns.md)
+  - [Centos7上面tomcat的日志分割](markdown/centos7-split-tomcat-log.md)
+  - [Contos7中Cron的使用](markdown/contos7-cron.md)
+  - [Centos7上删除默认jdk](markdown/delete-openjdk.md)
 
 - 软件安装
 
@@ -48,6 +52,7 @@
   - [redis5.0集群部署](markdown/redis5.0-cluster.md)
   - [nginx的反向代理](markdown/nginx-upstream.md)
   - [nginx配置tomcat反向代理](markdown/nginx-tomcat.md)
+  - [在Nginx上面配置Https](markdown/nginx-config-https.md)
   - [西部数码的域名+腾讯云的主机配置HTTPS](markdown/west.cn-https-config.md)
   - [jenkins简单实用](markdown/jenkins-use.md)
   - [jenkins持续集成java项目](markdown/jenkins-java-project.md)
